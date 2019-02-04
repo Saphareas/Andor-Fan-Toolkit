@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="story.css">
+  <script src="../marked.min.js"></script>
+  <script>
+    function renderPreview(el) {
+      document.getElementById("preview").querySelector("output").innerHTML = marked(el.value);
+    }
+  </script>
+</head>
+<body>
+  <form id="form-wrapper">
+    <label id="index">
+      Index: <br>
+      <input type="text">
+    </label>
+    <label id="text">
+      Text: <br>
+      <textarea cols="60" rows="30" oninput="renderPreview(this)"></textarea>
+    </label>
+    <label id="preview">
+      Preview:<br>
+      <output></output>
+    </label>
+    <label id="image-override">
+      Image Override: <br>
+      <input type="text"><button>Open...</button>
+    </label>
+  </form>
+  <script>
+
+  </script>
+</body>
+</html>
