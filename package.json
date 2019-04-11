@@ -1,0 +1,11 @@
+{
+    "name": "andor-fan-toolkit",
+    "version": "0.1.0",
+    "main": "app/main.js",
+    "scripts": {
+        "start": "electron ."
+    },
+    "devDependencies": {
+        "electron": "^4.1.3"
+    }
+}

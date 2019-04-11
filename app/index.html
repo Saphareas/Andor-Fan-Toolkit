@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <script src="lib/marked.min.js"></script>
+  <script>
+    function navigate(page_name) {
+      let xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        //console.debug(this);
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("content").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", "pages/" + page_name + ".html", true);
+      xhttp.send();
+    }
+
+    function renderPreview(el) {
+      document.getElementById("preview").querySelector("output").innerHTML = marked(el.value);
+    }
+  </script>
+</head>
+<body>
+  <nav class="tab-menu">
+    <a class="tab" href="javascript:void(0)" onclick="navigate('story')">Story Cards</a>
+    <a class="tab" href="javascript:void(0)" onclick="navigate('events')">Event Cards</a>
+    <a class="tab" href="javascript:void(0)" onclick="navigate('fog')">Fog Tiles</a>
+  </nav>
+  <div id="bg"></div>
+  <main id="content"></main>
+  <script>navigate("story");</script>
+  <script src="lib/editor.js"></script>
+</body>
+</html>
