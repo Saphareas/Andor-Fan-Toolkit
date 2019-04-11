@@ -3,9 +3,20 @@
     "version": "0.1.0",
     "main": "app/main.js",
     "scripts": {
-        "start": "electron ."
+        "start": "electron .",
+        "dev": "concurrently --kill-others \"npm run watch:sass\" \"npm start\"",
+        "build:sass": "node-sass -r --output-style compressed src/styles.scss -o app",
+        "watch:sass": "npm run build:sass && npm run build:sass --- -w"
     },
     "devDependencies": {
-        "electron": "^4.1.3"
+        "concurrently": "^4.1.0",
+        "electron": "^4.1.3",
+        "node-sass": "^4.11.0",
+        "sass-loader": "^7.1.0",
+        "style-loader": "^0.23.1"
+    },
+    "dependencies": {
+        "marked": "^0.6.2",
+        "vue": "^2.6.10"
     }
 }

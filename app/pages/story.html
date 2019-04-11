@@ -5,11 +5,9 @@
   </div>
   <div id="text">
     Text: <br>
-    <button class="rich-control" onclick="formatText(printBold)"><b>B</b></button>
-    <button class="rich-control" onclick="formatText(printItalic)"><i>I</i></button>
-    <button class="rich-control" onclick="formatText(underline)"><u>U</u></button>
-    <button class="rich-control" onclick="formatText(breakLine)">&para;</button>
-    <button class="rich-control" onclick="formatText(printList)">&bullet;</button>
+    <button title="Bold" class="rich-control" onclick="formatText(printBold)"><b>B</b></button>
+    <button title="Italic" class="rich-control" onclick="formatText(printItalic)"><i>I</i></button>
+    <button title="Bullet List" class="rich-control" onclick="formatText(printList)">&bullet;</button>
     <textarea cols="60" rows="30" oninput="renderPreview(this)"></textarea>
   </div>
   <div id="preview">

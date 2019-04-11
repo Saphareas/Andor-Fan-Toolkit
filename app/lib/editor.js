@@ -32,19 +32,6 @@ function printItalic(selection) {
   }
 }
 
-function underline(selection) {
-  if (selection === "") {
-    return "<u>underline</u>"
-  }
-  else if (selection.length > 0) {
-    return "<u>" + selection + "</u>"
-  }
-}
-
-function breakLine(selection) {
-  return "<br/>"
-}
-
 function printList(selection) {
   if (selection === "") {
     return "- list item"
