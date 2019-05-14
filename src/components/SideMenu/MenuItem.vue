@@ -1,8 +1,6 @@
 <template>
-  <a :href="item.url" class="w3-bar-item w3-button w3-padding-large w3-theme">
-    <i class="fa fa-home w3-xxlarge"></i>
-    <img :src="item.icon">
-    <p>{{item.title}}</p>
+  <a :href="url" :title="title">
+    <img :alt="title" :src="icon">
   </a>
 </template>
 
@@ -10,15 +8,31 @@
   export default {
     name: 'MenuItem',
     props: {
-        item: Object
+        title: String,
+        icon: String,
+        url: String
     },
-    components: { MenuItem },
+    components: {},
     methods: {}
   }
 </script>
 
 <style lang="scss" scoped>
-  img {
+  @import "../theme.scss";
+  a {
+    display: block;
     width: 100%;
-    padding: 6px}
+    margin: 12px auto;
+    padding: 4px 0;
+
+    &:hover {
+      @include theme-l1;
+    }
+
+    img {
+      width: 70%;
+      margin: 0 auto;
+      display: block;
+    }
+  }
 </style>

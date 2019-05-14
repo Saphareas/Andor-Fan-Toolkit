@@ -1,28 +1,39 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <SideMenu style="grid-area:sideMenu"></SideMenu>
+    <TabMenu style="grid-area:tabMenu"></TabMenu>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import SideMenu from './components/SideMenu.vue'
+import TabMenu from './components/TabMenu.vue'
 
 export default {
   name: 'app',
-  components: {
-    HelloWorld
-  }
+  data: function() {
+    return {}
+  },
+  components: {SideMenu, TabMenu}
 }
 </script>
 
 <style lang="scss">
+body {
+  margin: 0;
+  padding: 0;
+}
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  height: 100vh;
+  display: grid;
+  grid-template-areas:
+    "sideMenu tabMenu"
+    "sideMenu editor";
+  grid-template-columns: 60px 1fr;
+  grid-template-rows: 30px 1fr;
 }
 </style>
