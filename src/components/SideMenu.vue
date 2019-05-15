@@ -1,14 +1,16 @@
 <template>
   <nav>
-    <img alt="App Logo" src="../assets/andor.png">
+    <router-link to="/" id="logo">
+      <img alt="App Logo" src="../assets/andor.png">
+    </router-link>
     <div class="float-top">
       <MenuItem title="Story Editor" :icon="storyIcon" url="#"></MenuItem>
       <MenuItem title="Event Editor" :icon="eventIcon" url="#"></MenuItem>
       <MenuItem title="Fog Editor" :icon="fogIcon" url="#"></MenuItem>
     </div>
     <div class="float-bottom">
-      <MenuItem title="Settings" :icon="settingsIcon" url="#"></MenuItem>
-      <MenuItem title="Support" :icon="supportIcon" url="#"></MenuItem>
+      <MenuItem title="Settings" :icon="settingsIcon" url="/settings"></MenuItem>
+      <MenuItem title="Support" :icon="supportIcon" url="/about"></MenuItem>
     </div>
   </nav>
 </template>
@@ -37,7 +39,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "theme";
+  @import "@/components/theme.scss";
   $menuWidth: 60px;
   nav {
     width: $menuWidth;
@@ -45,7 +47,7 @@
     position: relative;
     @include theme-d3;
 
-    >img {width: $menuWidth}
+    #logo img {width: $menuWidth}
 
     .float-bottom {
       position: absolute;

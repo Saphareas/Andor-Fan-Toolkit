@@ -3,16 +3,16 @@
 </template>
 
 <script>
-import TabItem from "./TabMenu/TabItem";
+  import TabItem from "./TabMenu/TabItem";
 
-export default {
-  name: "TabMenu",
-  components: { TabItem }
-}
+  export default {
+    name: "TabMenu",
+    components: { TabItem }
+  }
 </script>
 
 <style lang="scss" scoped>
-  @import "theme";
+  @import "@/components/theme.scss";
   nav {
     @include theme-d3;
   }

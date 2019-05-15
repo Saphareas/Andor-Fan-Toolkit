@@ -1,7 +1,7 @@
 <template>
-  <a :href="url" :title="title">
+  <router-link :to="url" :title="title">
     <img :alt="title" :src="icon">
-  </a>
+  </router-link>
 </template>
 
 <script>
@@ -18,7 +18,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "../theme.scss";
+  @import "@/components/theme.scss";
   a {
     display: block;
     width: 100%;
