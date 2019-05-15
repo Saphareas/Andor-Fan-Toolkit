@@ -43,7 +43,7 @@
     width: $menuWidth;
     height: 100%;
     position: relative;
-    @include theme-d4;
+    @include theme-d3;
 
     >img {width: $menuWidth}
 

@@ -14,6 +14,6 @@ export default {
 <style lang="scss" scoped>
   @import "theme";
   nav {
-    @include theme-d4;
+    @include theme-d3;
   }
 </style>
