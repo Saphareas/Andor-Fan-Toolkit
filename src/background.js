@@ -34,6 +34,8 @@ function createWindow () {
   win.on('closed', () => {
     win = null
   })
+
+  require('./electronMenu')
 }
 
 // Quit when all windows are closed.
