@@ -42,10 +42,11 @@
   @import "@/components/theme.scss";
   $menuWidth: 60px;
   nav {
-    width: $menuWidth;
-    height: 100%;
-    position: relative;
     @include theme-d3;
+    width: $menuWidth;
+    height: 100vh;
+    position: fixed;
+    box-shadow: 0 1px 6px black;
 
     #logo img {width: $menuWidth}
 

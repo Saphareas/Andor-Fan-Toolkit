@@ -22,15 +22,15 @@
   a {
     display: block;
     width: 100%;
-    margin: 12px auto;
-    padding: 4px 0;
+    margin: 10px auto;
+    padding: 10px 0;
 
     &:hover {
       @include theme-l1;
     }
 
     img {
-      width: 70%;
+      width: 60%;
       margin: 0 auto;
       display: block;
     }

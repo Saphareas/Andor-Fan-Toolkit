@@ -2,7 +2,8 @@
   <div id="app">
     <SideMenu style="grid-area:sideMenu"></SideMenu>
     <TabMenu style="grid-area:tabMenu"></TabMenu>
-    <router-view style="grid-area:editor;padding:0 20px" /></div>
+    <router-view style="grid-area:editor;padding:0 20px" />
+  </div>
 </template>
 
 <script>
