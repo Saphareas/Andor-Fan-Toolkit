@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <script src="./index.js"></script>
+</head>
+<body>
+  <nav class="tab-menu">
+    <a class="tab" href="javascript:void(0)" onclick="navigate('story')">Story Cards</a>
+    <a class="tab" href="javascript:void(0)" onclick="navigate('events')">Event Cards</a>
+    <a class="tab" href="javascript:void(0)" onclick="navigate('fog')">Fog Tiles</a>
+  </nav>
+  <div id="bg"></div>
+  <main id="content">
+    <section id="story-editor" v-if="editor=='story-editor'">
+      <div id="index">
+        Index:
+        <input type="text">
+      </div>
+      <div id="text">
+        Text: <br>
+        <button title="Bold" class="rich-control" onclick="formatText(printBold)"><b>B</b></button>
+        <button title="Italic" class="rich-control" onclick="formatText(printItalic)"><i>I</i></button>
+        <button title="Bullet List" class="rich-control" onclick="formatText(printList)">&bullet;</button>
+        <textarea cols="60" rows="30" oninput="renderPreview(this)"></textarea>
+      </div>
+      <div id="preview">
+        Preview:<br>
+        <output></output>
+      </div>
+      <div id="image-override">
+        Image Override: <br>
+        <input type="text"> <button>Open...</button>
+      </div>
+    </section>
+    <section id="events-editor"></section>
+    <section id="fog-editor"></section>
+  </main>
+  <script src="lib/editor.js"></script>
+  <script>
+    require('vue');
+    var app = new Vue({
+      el: "#content",
+      data: {}
+    })
+  </script>
+</body>
+</html>
