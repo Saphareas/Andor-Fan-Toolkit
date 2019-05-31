@@ -3,19 +3,21 @@
     <SideMenu style="grid-area:sideMenu"></SideMenu>
     <TabMenu style="grid-area:tabMenu"></TabMenu>
     <router-view style="grid-area:editor;padding:0 20px" />
+    <LoadSaveBtn></LoadSaveBtn>
   </div>
 </template>
 
 <script>
   import SideMenu from './components/SideMenu.vue'
   import TabMenu from './components/TabMenu.vue'
+  import LoadSaveBtn from "./components/LoadSaveBtn.vue"
 
   export default {
     name: 'app',
     data: function() {
       return {}
     },
-    components: {SideMenu, TabMenu}
+    components: {SideMenu, TabMenu, LoadSaveBtn}
   }
 </script>
 
