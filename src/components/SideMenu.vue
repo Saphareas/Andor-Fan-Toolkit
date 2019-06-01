@@ -42,7 +42,7 @@
   @import "@/components/theme.scss";
   $menuWidth: 60px;
   nav {
-    @include theme-d3;
+    @include theme-dark;
     width: $menuWidth;
     height: 100vh;
     position: fixed;

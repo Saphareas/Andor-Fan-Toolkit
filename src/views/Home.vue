@@ -19,6 +19,6 @@
 
 <style lang="scss" scoped>
   @import "@/components/theme.scss";
-  .home {@include theme-dark;}
+  .home {@include theme-darker;}
 </style>
 

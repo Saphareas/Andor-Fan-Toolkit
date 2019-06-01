@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <SideMenu style="grid-area:sideMenu"></SideMenu>
-    <TabMenu style="grid-area:tabMenu"></TabMenu>
     <router-view style="grid-area:editor;padding:0 20px" />
     <LoadSaveBtn></LoadSaveBtn>
   </div>
@@ -32,9 +31,7 @@
     height: 100vh;
     display: grid;
     grid-template-areas:
-      "sideMenu tabMenu"
       "sideMenu editor";
     grid-template-columns: 60px 1fr;
-    grid-template-rows: 30px 1fr;
   }
 </style>

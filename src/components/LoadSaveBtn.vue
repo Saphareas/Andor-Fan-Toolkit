@@ -44,6 +44,7 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "@/components/theme.scss";
   .container {
     position: fixed;
     bottom: 0px;
@@ -51,14 +52,15 @@
   }
 
   .loadsavebtn {
+    @include theme-light;
     display: block;
     height: 60px;
     width: 60px;
-    background: limegreen;
     border-radius: 30px;
     text-align: center;
     line-height: 60px;
     font-size: 1.5rem;
+    text-decoration: none;
     box-shadow: 0 0 12px black;
     margin: 12px;
     opacity: .2;

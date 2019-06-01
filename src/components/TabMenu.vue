@@ -14,7 +14,7 @@
 <style lang="scss" scoped>
   @import "@/components/theme.scss";
   nav {
-    @include theme-d3;
+    @include theme-dark;
     position: sticky;
     top: 0;
     box-shadow: 0 1px 6px black;
