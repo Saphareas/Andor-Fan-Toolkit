@@ -1,0 +1,72 @@
+{
+"story": {
+  "title": "Lorem ipsum dolor sit",
+  "cards": [
+    {
+      "index": "A1",
+      "text": "*Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.*<br><br>**Donec quam felis**, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo."
+    },
+    {
+      "index": "A2",
+      "text": "*Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.*<br><br>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo."
+    },
+    {
+      "index": "C",
+      "text": "*Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.*<br><br>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo."
+    }
+  ]
+},
+"events": [
+    { "index": 1, "text": "Lorem ipsum dolor sit amet..." },
+    { "index": 2, "text": "Lorem ipsum dolor sit amet..." },
+    { "index": 3, "text": "Lorem ipsum dolor sit amet..." },
+    { "index": 4, "text": "Lorem ipsum dolor sit amet..." },
+    { "index": 5, "text": "Lorem ipsum dolor sit amet..." },
+    { "index": 6, "text": "Lorem ipsum dolor sit amet..." },
+    { "index": 7, "text": "Lorem ipsum dolor sit amet..." },
+    { "index": 8, "text": "Lorem ipsum dolor sit amet..." },
+    { "index": 9, "text": "Lorem ipsum dolor sit amet...", "isShieldable": true },
+    { "index": 10, "text": "Lorem ipsum dolor sit amet...", "isShieldable": true },
+    { "index": 11, "text": "Lorem ipsum dolor sit amet...", "isShieldable": true },
+    { "index": 12, "text": "Lorem ipsum dolor sit amet...", "isShieldable": true },
+    { "index": 13, "text": "Lorem ipsum dolor sit amet...", "isShieldable": true },
+    { "index": 14, "text": "Lorem ipsum dolor sit amet...", "isShieldable": true },
+    { "index": 15, "text": "Lorem ipsum dolor sit amet...", "isShieldable": true },
+    { "index": 16, "text": "Lorem ipsum dolor sit amet...", "isShieldable": true }
+  ],
+"fog": [
+  {"img": "../assets/fog/fog_-3wp.png",   "count": 8},
+  {"img": "../assets/fog/fog_-3wp.png",   "count": 8},
+  {"img": "../assets/fog/fog_-3wp.png",   "count": 8},
+  {"img": "../assets/fog/fog_2wp.png",    "count": 8},
+  {"img": "../assets/fog/fog_2wp.png",    "count": 8},
+  {"img": "../assets/fog/fog_2wp.png",    "count": 8},
+  {"img": "../assets/fog/fog_3wp.png",    "count": 8},
+  {"img": "../assets/fog/fog_3wp.png",    "count": 8},
+  {"img": "../assets/fog/fog_3wp.png",    "count": 8},
+  {"img": "../assets/fog/fog_bottle.png", "count": 8},
+  {"img": "../assets/fog/fog_bottle.png", "count": 8},
+  {"img": "../assets/fog/fog_bottle.png", "count": 8},
+  {"img": "../assets/fog/fog_gor.png",    "count": 8},
+  {"img": "../assets/fog/fog_gor.png",    "count": 8},
+  {"img": "../assets/fog/fog_gor.png",    "count": 8},
+  {"img": "../assets/fog/fog_gor.png",    "count": 8},
+  {"img": "../assets/fog/fog_gor.png",    "count": 8},
+  {"img": "../assets/fog/fog_gor.png",    "count": 8},
+  {"img": "../assets/fog/fog_gor.png",    "count": 8},
+  {"img": "../assets/fog/fog_gor.png",    "count": 8},
+  {"img": "../assets/fog/fog_gor.png",    "count": 8},
+  {"img": "../assets/fog/fog_nuts.png",   "count": 8},
+  {"img": "../assets/fog/fog_nuts.png",   "count": 8},
+  {"img": "../assets/fog/fog_nuts.png",   "count": 8},
+  {"img": "../assets/fog/fog_nuts.png",   "count": 8},
+  {"img": "../assets/fog/fog_nuts.png",   "count": 8},
+  {"img": "../assets/fog/fog_nuts.png",   "count": 8},
+  {"img": "../assets/fog/fog_skral.png",  "count": 8},
+  {"img": "../assets/fog/fog_skral.png",  "count": 8},
+  {"img": "../assets/fog/fog_skral.png",  "count": 8},
+  {"img": "../assets/fog/fog_troll.png",  "count": 8},
+  {"img": "../assets/fog/fog_troll.png",  "count": 8},
+  {"img": "../assets/fog/fog_troll.png",  "count": 8}
+]
+}
