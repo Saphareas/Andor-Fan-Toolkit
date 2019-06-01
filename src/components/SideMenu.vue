@@ -17,11 +17,11 @@
 
 <script>
   import MenuItem from "./SideMenu/MenuItem"
-  import storyIcon from "../assets/story.png"
-  import eventIcon from "../assets/events.png"
-  import fogIcon from "../assets/fog.png"
-  import supportIcon from "../assets/heart.png"
-  import settingsIcon from "../assets/cog.png"
+  import storyIcon from "../assets/library-books.svg"
+  import eventIcon from "../assets/card-text.svg"
+  import fogIcon from "../assets/weather-fog.svg"
+  import supportIcon from "../assets/heart.svg"
+  import settingsIcon from "../assets/settings.svg"
 
   export default {
     name: "SideMenu",
@@ -53,6 +53,7 @@
     .float-bottom {
       position: absolute;
       bottom: 0;
+      width: 100%;
     }
   }
 </style>

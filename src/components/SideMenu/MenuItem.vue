@@ -8,9 +8,9 @@
   export default {
     name: 'MenuItem',
     props: {
-        title: String,
-        icon: String,
-        url: String
+      title: String,
+      icon: String,
+      url: String
     },
     components: {},
     methods: {}
@@ -34,6 +34,7 @@
       width: 60%;
       margin: 0 auto;
       display: block;
+      filter: invert(100%);
     }
   }
 </style>
