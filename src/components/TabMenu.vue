@@ -1,3 +1,9 @@
+<!--
+Copyright (C) 2019 Fabian Große
+Released under the GNU GENERAL PUBLIC LICENSE 3
+https://github.com/Saphareas/Andor-Fan-Toolkit/blob/master/LICENSE
+-->
+
 <template>
   <nav>.</nav>
 </template>

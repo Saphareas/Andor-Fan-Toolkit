@@ -1,3 +1,9 @@
+<!--
+Copyright (C) 2019 Fabian Große
+Released under the GNU GENERAL PUBLIC LICENSE 3
+https://github.com/Saphareas/Andor-Fan-Toolkit/blob/master/LICENSE
+-->
+
 <template>
   <div id="app">
     <SideMenu style="grid-area:sideMenu"></SideMenu>
@@ -8,7 +14,6 @@
 
 <script>
   import SideMenu from './components/SideMenu.vue'
-  import TabMenu from './components/TabMenu.vue'
   import LoadSaveBtn from "./components/LoadSaveBtn.vue"
 
   export default {
@@ -16,7 +21,7 @@
     data: function() {
       return {}
     },
-    components: {SideMenu, TabMenu, LoadSaveBtn}
+    components: {SideMenu, LoadSaveBtn}
   }
 </script>
 
