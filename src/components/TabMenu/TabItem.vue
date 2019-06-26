@@ -5,16 +5,15 @@ https://github.com/Saphareas/Andor-Fan-Toolkit/blob/master/LICENSE
 -->
 
 <template>
-  <a>{{ lorem }}</a>
+  <a href="javascript:void(0)">{{ title }}</a>
 </template>
 
 <script>
 export default {
   name: "TabItem",
-  data: function() {
-    return {
-      lorem: this.$root.$data.lorem
-    }
+  props: {
+    title: String,
+    index: Number
   }
 }
 </script>
@@ -23,9 +22,12 @@ export default {
   @import "@/components/theme.scss";
   a {
     @include theme-light;
-    max-width: 80px;
+    max-width: 100px;
     text-align: center;
     height: 100%;
+    margin: 0 2px;
+    flex-grow: 1;
+    flex-shrink: 1;
 
     &:hover {@include theme-action}
     .selected {@include theme-darker}
