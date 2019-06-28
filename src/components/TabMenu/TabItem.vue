@@ -5,7 +5,10 @@ https://github.com/Saphareas/Andor-Fan-Toolkit/blob/master/LICENSE
 -->
 
 <template>
-  <a href="javascript:void(0)">{{ title }}</a>
+  <div class="tab">
+    <a class="innerTab" href="javascript:void(0)" @click="$emit('select', index)">{{ title }}</a>
+    <a class="X" href="javascript:void(0)" @click="$emit('remove', index)">×</a>
+  </div>
 </template>
 
 <script>
@@ -20,7 +23,7 @@ export default {
 
 <style lang="scss" scoped>
   @import "@/components/theme.scss";
-  a {
+  .tab {
     @include theme-light;
     max-width: 100px;
     text-align: center;
@@ -29,7 +32,20 @@ export default {
     flex-grow: 1;
     flex-shrink: 1;
 
+    > a.innerTab {
+      display: inline-block;
+      width: 80%;
+      height: 100%;
+
+      &:hover {@include theme-action}
+    }
+  }
+
+  a.X {
+    display: inline-block;
+    width: 20%;
+    height: 100%;
+
     &:hover {@include theme-action}
-    .selected {@include theme-darker}
   }
 </style>
