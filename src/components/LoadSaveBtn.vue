@@ -39,7 +39,7 @@ https://github.com/Saphareas/Andor-Fan-Toolkit/blob/master/LICENSE
         const fs = require("fs");
         let options = {filters: [{name: "JSON", extensions: ["json"]}]};
         let json = JSON.stringify(this.$root.$data);
-        dialog.showSaveDialog(null, options, (paths) => {
+        dialog.showSaveDialog(null, options, (path) => {
           if (typeof path != "undefined")
             fs.writeFileSync(path, json);
         });
