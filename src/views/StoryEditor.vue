@@ -1,3 +1,9 @@
+<!--
+Copyright (C) 2019 Fabian Große
+Released under the GNU GENERAL PUBLIC LICENSE 3
+https://github.com/Saphareas/Andor-Fan-Toolkit/blob/master/LICENSE
+-->
+
 <template>
   <div class="story-editor">
     <div id="title">Campaign Title: <input type="text"></div>
@@ -5,19 +11,19 @@
         Card Index: <input type="text">
     </div>
     <div id="text">
-        Text: <br>
-        <button title="Bold" class="rich-control" @click="formatText(printBold)"><b>B</b></button>
-        <button title="Italic" class="rich-control" @click="formatText(printItalic)"><i>I</i></button>
-        <button title="Bullet List" class="rich-control" @click="formatText(printList)">&bullet;</button>
-        <textarea cols="60" rows="30" v-model="rawText" placeholder="add multiple lines"></textarea>
+      Text: <br>
+      <button title="Bold" class="rich-control" @click="formatText(printBold)"><b>B</b></button>
+      <button title="Italic" class="rich-control" @click="formatText(printItalic)"><i>I</i></button>
+      <button title="Bullet List" class="rich-control" @click="formatText(printList)">&bullet;</button>
+      <textarea cols="60" rows="30" v-model="rawText" placeholder="add multiple lines"></textarea>
     </div>
     <div id="preview">
-        Preview:<br>
-        <output style="white-space: pre-line;" v-html="safeText"></output>
+      Preview:<br>
+      <output style="white-space: pre-line;" v-html="safeText"></output>
     </div>
     <div id="image-override">
-        Image Override: <br>
-        <input type="text"> <button>Open...</button>
+      Image Override: <br>
+      <input type="text"> <button>Open...</button>
     </div>
   </div>
 </template>
@@ -103,15 +109,15 @@
   .story-editor {
     display: grid;
     grid-template-areas:
-      "title   .       iindex"
+      "title   .       index"
       "text    .       preview"
       "imageOv imageOv .";
     grid-template-columns: 4fr 0.5fr 4fr;
     grid-template-rows: max-content 1fr max-content;
 
     >* {
-        display: block;
-        margin: 10px;
+      display: block;
+      margin: 10px;
     }
 
     #title {
@@ -119,45 +125,41 @@
     }
 
     #index {
-        grid-area: iindex;
-        input {width: 4ch;}
+      grid-area: index;
+      input {width: 4ch;}
     }
     
     #text {
-        grid-area: text;
-        textarea {
-            resize: none;
-            width: 100%;
-            min-height: 10rem;
-            padding: 5px;
-            font-size: 1rem;
-            font-family: sans-serif;
-        }
+      grid-area: text;
+      textarea {
+        resize: none;
+        width: 100%;
+        min-height: 10rem;
+        padding: 5px;
+        font-size: 1rem;
+        font-family: sans-serif;
+      }
     }
     
     #preview {
-        grid-area: preview;
-        output {
-            overflow-wrap: break-word;
-            font-size: 1rem;
-            font-family: sans-serif;
-        }
+      grid-area: preview;
+      output {
+        overflow-wrap: break-word;
+        font-size: 1rem;
+        font-family: sans-serif;
+      }
     }
     
     #image-override {
-        grid-area: imageOv;
-        input {
-            width: 50%;
-        }
+      grid-area: imageOv;
+      input {
+        width: 50%;
+      }
     }
   }
 
   .rich-control {
-      width: 2rem;
-      height: 2rem;
-  }
-
-  a[title='Story Editor'] {
-    @include theme-l1;
+    width: 2rem;
+    height: 2rem;
   }
 </style>
