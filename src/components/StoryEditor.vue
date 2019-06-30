@@ -4,15 +4,25 @@
       Index: <input type="text">
     </div>
     <div id="text">
-      <button title="Bold" class="rich-control" @click="formatText(printBold)"><b>B</b></button>
-      <button title="Italic" class="rich-control" @click="formatText(printItalic)"><i>I</i></button>
-      <button title="Bullet List" class="rich-control" @click="formatText(printList)">&bullet;</button>
+      <button title="Bold" class="rich-control" @click="formatText(printBold)">
+        <img alt="Bold" :src="boldIcon">
+      </button>
+      <button title="Italic" class="rich-control" @click="formatText(printItalic)">
+        <img alt="Italic" :src="italicIcon">
+      </button>
+      <button title="Bullet List" class="rich-control" @click="formatText(printList)">
+        <img alt="Bullet List" :src="bListIcon">
+      </button>
       <textarea v-model="rawText" placeholder="add multiple lines"></textarea>
     </div>
   </div>
 </template>
 
 <script>
+  import boldIcon from "../assets/format-bold.svg"
+  import italicIcon from "../assets/format-italic.svg"
+  import bListIcon from "../assets/format-list-bulleted.svg"
+
   export default {
     data: function() {
       return {
@@ -26,7 +36,10 @@
           '/': '&#x2F;',
           '`': '&#x60;',
           '=': '&#x3D;'
-        }
+        },
+        boldIcon: boldIcon,
+        italicIcon: italicIcon,
+        bListIcon: bListIcon
       }
     },
     computed: {
@@ -114,5 +127,11 @@
   .rich-control {
     width: 2rem;
     height: 2rem;
+    padding: 2px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
 </style>
