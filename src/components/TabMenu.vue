@@ -54,7 +54,8 @@ https://github.com/Saphareas/Andor-Fan-Toolkit/blob/master/LICENSE
     width: 100%;
     height: 1.5rem;
     box-shadow: 0 1px 6px black;
-    display: flex;
+    display: flex !important;
+    margin: 0 !important;
 
     .active {@include theme-action}
 

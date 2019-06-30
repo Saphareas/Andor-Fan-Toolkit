@@ -7,7 +7,7 @@ https://github.com/Saphareas/Andor-Fan-Toolkit/blob/master/LICENSE
 <template>
   <div id="app">
     <SideMenu style="grid-area:sideMenu"></SideMenu>
-    <router-view style="grid-area:editor;padding:0 20px" />
+    <router-view style="grid-area:editor" />
     <LoadSaveBtn></LoadSaveBtn>
   </div>
 </template>
