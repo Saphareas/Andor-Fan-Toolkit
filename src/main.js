@@ -8,15 +8,5 @@ Vue.config.productionTip = false
 new Vue({
   router,
   render: h => h(App),
-  store,
-
-  data: function() {
-    return {
-      story: {
-        title: "New Campaign",
-        cards:[{index:"New Card", text:""}]},
-      events: {},
-      fog: {}
-    }
-  }
+  store
 }).$mount('#app')
