@@ -1,32 +1,38 @@
+<!--
+Copyright (C) 2019 Fabian Große
+Released under the GNU GENERAL PUBLIC LICENSE 3
+https://github.com/Saphareas/Andor-Fan-Toolkit/blob/master/LICENSE
+-->
+
 <template>
   <div class="story-editor">
-    <div id="title">Campaign Title: <input type="text"></div>
     <div id="index">
-      Card Index: <input type="text">
+      Index: <input type="text" v-model="cardIndex">
     </div>
     <div id="text">
-      Text: <br>
-      <button title="Bold" class="rich-control" @click="formatText(printBold)"><b>B</b></button>
-      <button title="Italic" class="rich-control" @click="formatText(printItalic)"><i>I</i></button>
-      <button title="Bullet List" class="rich-control" @click="formatText(printList)">&bullet;</button>
-      <textarea cols="60" rows="30" v-model="rawText" placeholder="add multiple lines"></textarea>
-    </div>
-    <div id="preview">
-      Preview:<br>
-      <output style="white-space: pre-line;" v-html="safeText"></output>
-    </div>
-    <div id="image-override">
-      Image Override: <br>
-      <input type="text"> <button>Open...</button>
+      <button title="Bold" class="rich-control" @click="formatText(printBold)">
+        <img alt="Bold" :src="boldIcon">
+      </button>
+      <button title="Italic" class="rich-control" @click="formatText(printItalic)">
+        <img alt="Italic" :src="italicIcon">
+      </button>
+      <button title="Bullet List" class="rich-control" @click="formatText(printList)">
+        <img alt="Bullet List" :src="bListIcon">
+      </button>
+      <textarea placeholder="add multiple lines" v-model="cardText"></textarea>
     </div>
   </div>
 </template>
 
 <script>
+  import boldIcon from "../assets/format-bold.svg"
+  import italicIcon from "../assets/format-italic.svg"
+  import bListIcon from "../assets/format-list-bulleted.svg"
+
   export default {
+    props: {index:Number},
     data: function() {
       return {
-        rawText: "",
         entityMap: {
           '&': '&amp;',
           '<': '&lt;',
@@ -36,10 +42,37 @@
           '/': '&#x2F;',
           '`': '&#x60;',
           '=': '&#x3D;'
-        }
+        },
+        boldIcon: boldIcon,
+        italicIcon: italicIcon,
+        bListIcon: bListIcon
       }
     },
     computed: {
+      cardIndex: {
+        get() {
+          return this.$store.state.story.cards[this.index].cardIndex
+        },
+        set(newValue) {
+          let payload = {
+            index: this.index,
+            newValue: newValue
+          };
+          this.$store.commit("updateStoryCardIndex", payload);
+        }
+      },
+      cardText: {
+        get() {
+          return this.$store.state.story.cards[this.index].cardText
+        },
+        set(newValue) {
+          let payload = {
+            index: this.index,
+            newValue: newValue
+          };
+          this.$store.commit("updateStoryCardText", payload);
+        }
+      },
       safeText: function() {
         let vm = this;
         let marked = require("marked");
@@ -100,30 +133,16 @@
   @import "@/components/theme.scss";
   /*.home {@include theme-dark;}*/
   .story-editor {
-    display: grid;
-    grid-template-areas:
-      "title   .       index"
-      "text    .       preview"
-      "imageOv imageOv .";
-    grid-template-columns: 4fr 0.5fr 4fr;
-    grid-template-rows: max-content 1fr max-content;
-
     >* {
       display: block;
       margin: 10px;
     }
 
-    #title {
-      grid-area: title;
-    }
-
     #index {
-      grid-area: index;
       input {width: 4ch;}
     }
 
     #text {
-      grid-area: text;
       textarea {
         resize: none;
         width: 100%;
@@ -133,26 +152,16 @@
         font-family: sans-serif;
       }
     }
-
-    #preview {
-      grid-area: preview;
-      output {
-        overflow-wrap: break-word;
-        font-size: 1rem;
-        font-family: sans-serif;
-      }
-    }
-    
-    #image-override {
-      grid-area: imageOv;
-      input {
-        width: 50%;
-      }
-    }
   }
 
   .rich-control {
     width: 2rem;
     height: 2rem;
+    padding: 2px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
 </style>
