@@ -27,9 +27,9 @@ https://github.com/Saphareas/Andor-Fan-Toolkit/blob/master/LICENSE
           if (typeof paths != "undefined") {
             let file = fs.readFileSync(paths[0]);
             file = JSON.parse(file);
-            this.$root.$data.story  = file.story;
-            this.$root.$data.events = file.events;
-            this.$root.$data.fog    = file.fog;
+            this.$store.commit("updateStory", file.story);
+            this.$store.commit("updateEvents", file.events);
+            this.$store.commit("updateFog", file.fog);
           }
         });
         return false;
@@ -38,7 +38,7 @@ https://github.com/Saphareas/Andor-Fan-Toolkit/blob/master/LICENSE
         const dialog = require("electron").remote.dialog;
         const fs = require("fs");
         let options = {filters: [{name: "JSON", extensions: ["json"]}]};
-        let json = JSON.stringify(this.$root.$data);
+        let json = JSON.stringify(this.$store.state);
         dialog.showSaveDialog(null, options, (path) => {
           if (typeof path != "undefined")
             fs.writeFileSync(path, json);
