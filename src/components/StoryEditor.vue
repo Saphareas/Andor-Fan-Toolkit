@@ -1,7 +1,13 @@
+<!--
+Copyright (C) 2019 Fabian Große
+Released under the GNU GENERAL PUBLIC LICENSE 3
+https://github.com/Saphareas/Andor-Fan-Toolkit/blob/master/LICENSE
+-->
+
 <template>
   <div class="story-editor">
     <div id="index">
-      Index: <input type="text">
+      Index: <input type="text" v-model="cardIndex">
     </div>
     <div id="text">
       <button title="Bold" class="rich-control" @click="formatText(printBold)">
@@ -13,7 +19,7 @@
       <button title="Bullet List" class="rich-control" @click="formatText(printList)">
         <img alt="Bullet List" :src="bListIcon">
       </button>
-      <textarea v-model="rawText" placeholder="add multiple lines"></textarea>
+      <textarea placeholder="add multiple lines" v-model="cardText"></textarea>
     </div>
   </div>
 </template>
@@ -24,9 +30,9 @@
   import bListIcon from "../assets/format-list-bulleted.svg"
 
   export default {
+    props: {index:Number},
     data: function() {
       return {
-        rawText: "",
         entityMap: {
           '&': '&amp;',
           '<': '&lt;',
@@ -43,6 +49,30 @@
       }
     },
     computed: {
+      cardIndex: {
+        get() {
+          return this.$store.state.story.cards[this.index].cardIndex
+        },
+        set(newValue) {
+          let payload = {
+            index: this.index,
+            newValue: newValue
+          };
+          this.$store.commit("updateStoryCardIndex", payload);
+        }
+      },
+      cardText: {
+        get() {
+          return this.$store.state.story.cards[this.index].cardText
+        },
+        set(newValue) {
+          let payload = {
+            index: this.index,
+            newValue: newValue
+          };
+          this.$store.commit("updateStoryCardText", payload);
+        }
+      },
       safeText: function() {
         let vm = this;
         let marked = require("marked");
