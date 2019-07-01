@@ -10,9 +10,9 @@ https://github.com/Saphareas/Andor-Fan-Toolkit/blob/master/LICENSE
       <img alt="App Logo" src="../assets/andor.png">
     </router-link>
     <div class="float-top">
-      <MenuItem title="Story Editor" :icon="storyIcon" url="#"></MenuItem>
-      <MenuItem title="Event Editor" :icon="eventIcon" url="#"></MenuItem>
-      <MenuItem title="Fog Editor" :icon="fogIcon" url="#"></MenuItem>
+      <MenuItem title="Story Editor" :icon="storyIcon" url="/story-editor"></MenuItem>
+      <MenuItem title="Event Editor" :icon="eventIcon" url="/event-editor"></MenuItem>
+      <MenuItem title="Fog Editor" :icon="fogIcon" url="/fog-editor"></MenuItem>
     </div>
     <div class="float-bottom">
       <MenuItem title="Settings" :icon="settingsIcon" url="/settings"></MenuItem>
