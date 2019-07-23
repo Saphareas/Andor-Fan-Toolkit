@@ -9,19 +9,29 @@ https://github.com/Saphareas/Andor-Fan-Toolkit/blob/master/LICENSE
     <SideMenu style="grid-area:sideMenu"></SideMenu>
     <router-view style="grid-area:editor" />
     <LoadSaveBtn></LoadSaveBtn>
+
   </div>
 </template>
 
 <script>
-  import SideMenu from './components/SideMenu.vue'
+  import SideMenu from "./components/SideMenu.vue"
   import LoadSaveBtn from "./components/LoadSaveBtn.vue"
 
   export default {
-    name: 'app',
+    name: "app",
+    components: {SideMenu, LoadSaveBtn},
     data: function() {
-      return {}
-    },
-    components: {SideMenu, LoadSaveBtn}
+      return {
+        version: "0.1.0",
+        changelog: [
+          "stuff",
+          "more stuff",
+          "fancy stuff",
+          "even fancier stuff",
+          "banana"
+        ]
+      }
+    }
   }
 </script>
 
