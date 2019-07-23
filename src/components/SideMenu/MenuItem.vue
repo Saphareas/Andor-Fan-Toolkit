@@ -7,6 +7,7 @@ https://github.com/Saphareas/Andor-Fan-Toolkit/blob/master/LICENSE
 <template>
   <router-link class="menu-item" :to="url" :title="title">
     <img :alt="title" :src="icon">
+    <span>{{ title }}</span>
   </router-link>
 </template>
 
@@ -30,6 +31,9 @@ https://github.com/Saphareas/Andor-Fan-Toolkit/blob/master/LICENSE
     width: 100%;
     margin: 10px auto;
     padding: 10px 0;
+    text-align: center;
+    color: white;
+    text-decoration: none;
 
     &:hover {
       @include theme-light;
@@ -41,6 +45,10 @@ https://github.com/Saphareas/Andor-Fan-Toolkit/blob/master/LICENSE
       margin: 0 auto;
       display: block;
       filter: invert(100%);
+    }
+
+    span {
+      display: block;
     }
   }
 </style>
