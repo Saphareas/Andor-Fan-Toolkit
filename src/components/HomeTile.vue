@@ -1,5 +1,5 @@
 <template>
-  <a href="javascript:void(0)" class="container">
+  <a href="javascript:void(0)" class="container" @click="$emit('klick', $event)">
     <img :src="img" :alt="title">
     <span>{{ title }}</span>
   </a>

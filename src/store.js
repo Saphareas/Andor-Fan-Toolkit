@@ -7,7 +7,8 @@ export default new Vuex.Store({
   state: {
     story: {
       title: "New Campaign",
-      cards:[{cardIndex:"New Card", cardText:""}]},
+      cards:[{cardIndex:"New Card", cardText:""}]
+    },
     events: {},
     fog: {}
   },
@@ -33,6 +34,14 @@ export default new Vuex.Store({
     },
     updateFog (state, payload) {
       state.fog = payload
+    },
+    reset () {
+      this.commit("updateStory", {
+        title: "New Campaign",
+        cards:[{cardIndex:"New Card", cardText:""}]
+      });
+      this.commit("updateEvents", {});
+      this.commit("updateFog", {});
     }
   },
   actions: {

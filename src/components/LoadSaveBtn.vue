@@ -12,40 +12,11 @@ https://github.com/Saphareas/Andor-Fan-Toolkit/blob/master/LICENSE
 </template>
 
 <script>
+  import LoadSave from "@/components/loadSave.js"
+
   export default {
-    methods: {
-      load: function() {
-        const dialog = require("electron").remote.dialog;
-        const fs = require("fs");
-        let options = {
-          properties: ["openFile", "promptToCreate"],
-          filters: [
-            {name: "JSON", extensions: ["json"]},
-            {name: "All Files", extensions:["*"]}
-          ]};
-        dialog.showOpenDialog(null, options, (paths) => {
-          if (typeof paths != "undefined") {
-            let file = fs.readFileSync(paths[0]);
-            file = JSON.parse(file);
-            this.$store.commit("updateStory", file.story);
-            this.$store.commit("updateEvents", file.events);
-            this.$store.commit("updateFog", file.fog);
-          }
-        });
-        return false;
-      },
-      save: function() {
-        const dialog = require("electron").remote.dialog;
-        const fs = require("fs");
-        let options = {filters: [{name: "JSON", extensions: ["json"]}]};
-        let json = JSON.stringify(this.$store.state);
-        dialog.showSaveDialog(null, options, (path) => {
-          if (typeof path != "undefined")
-            fs.writeFileSync(path, json);
-        });
-        return false;
-      }
-    }
+    name: "LoadSaveBtn",
+    extends: LoadSave
   }
 </script>
 
