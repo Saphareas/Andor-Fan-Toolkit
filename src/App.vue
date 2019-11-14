@@ -8,20 +8,27 @@ https://github.com/Saphareas/Andor-Fan-Toolkit/blob/master/LICENSE
   <div id="app">
     <SideMenu style="grid-area:sideMenu"></SideMenu>
     <router-view style="grid-area:editor" />
-    <LoadSaveBtn></LoadSaveBtn>
   </div>
 </template>
 
 <script>
-  import SideMenu from './components/SideMenu.vue'
-  import LoadSaveBtn from "./components/LoadSaveBtn.vue"
+  import SideMenu from "./components/SideMenu.vue"
 
   export default {
-    name: 'app',
+    name: "app",
+    components: {SideMenu},
     data: function() {
-      return {}
-    },
-    components: {SideMenu, LoadSaveBtn}
+      return {
+        version: "0.1.0",
+        changelog: [
+          "stuff",
+          "more stuff",
+          "fancy stuff",
+          "even fancier stuff",
+          "banana"
+        ]
+      }
+    }
   }
 </script>
 
@@ -38,5 +45,14 @@ https://github.com/Saphareas/Andor-Fan-Toolkit/blob/master/LICENSE
     grid-template-areas:
       "sideMenu editor";
     grid-template-columns: 60px 1fr;
+  }
+
+  $fa-font-path: "../node_modules/@fortawesome/fontawesome-free/webfonts" !default;
+  @import "../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+  @import "../node_modules/@fortawesome/fontawesome-free/scss/regular";
+  @import "../node_modules/@fortawesome/fontawesome-free/scss/solid";
+  @import "../node_modules/@fortawesome/fontawesome-free/scss/brands";
+  .fa,.fas,.far,.fal,.fab {
+    font-family: "Font Awesome 5 Free";
   }
 </style>

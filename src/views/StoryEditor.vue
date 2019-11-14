@@ -16,16 +16,18 @@ https://github.com/Saphareas/Andor-Fan-Toolkit/blob/master/LICENSE
     <a class="addBtn" href="javascript:void(0)" @click="addCard">
       <img :src="plusInCircle" alt="Add">
     </a>
+    <LoadSaveBtn></LoadSaveBtn>
   </div>
 </template>
 
 <script>
   import StoryEditor from "@/components/StoryEditor.vue"
   import PlusInCircle from "@/assets/plus-circle-outline.svg"
+  import LoadSaveBtn from "@/components/LoadSaveBtn.vue"
 
   export default {
     name: "StoryEditorView",
-    components: {StoryEditor},
+    components: {StoryEditor, LoadSaveBtn},
     data: function() {
       return {
         plusInCircle: PlusInCircle
