@@ -1,8 +1,8 @@
 <template>
   <div class="home">
-    <HomeTile class="tile" title="New Project" img="https://via.placeholder.com/150" @klick="nav_new"/>  
-    <HomeTile class="tile" title="Load Project" img="https://via.placeholder.com/150" @klick="nav_load"/>   
-    <HomeTile class="tile" title="Settings" img="https://via.placeholder.com/150" @klick="nav_settings"/>    
+    <HomeTile class="tile" title="New Project" glyph="fa-file-medical" @klick="nav_new"/>  
+    <HomeTile class="tile" title="Load Project" glyph="fa-folder-open" @klick="nav_load"/>   
+    <HomeTile class="tile" title="Settings" glyph="fa-sliders-h" @klick="nav_settings"/>    
     <hr>
     <Changelog :changes="changes" />
   </div>

@@ -46,4 +46,13 @@ https://github.com/Saphareas/Andor-Fan-Toolkit/blob/master/LICENSE
       "sideMenu editor";
     grid-template-columns: 60px 1fr;
   }
+
+  $fa-font-path: "../node_modules/@fortawesome/fontawesome-free/webfonts" !default;
+  @import "../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+  @import "../node_modules/@fortawesome/fontawesome-free/scss/regular";
+  @import "../node_modules/@fortawesome/fontawesome-free/scss/solid";
+  @import "../node_modules/@fortawesome/fontawesome-free/scss/brands";
+  .fa,.fas,.far,.fal,.fab {
+    font-family: "Font Awesome 5 Free";
+  }
 </style>

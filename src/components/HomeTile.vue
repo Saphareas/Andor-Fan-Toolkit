@@ -1,6 +1,6 @@
 <template>
   <a href="javascript:void(0)" class="container" @click="$emit('klick', $event)">
-    <img :src="img" :alt="title">
+    <i class="fas fa-7x" :class="glyph"></i>
     <span>{{ title }}</span>
   </a>
 </template>
@@ -8,7 +8,7 @@
 <script>
 export default {
   name: "HomeTile",
-  props: ["title", "img"]
+  props: ["title", "glyph"]
 }
 </script>
 
@@ -31,7 +31,7 @@ export default {
       transition: background-color .1s linear;
     }
 
-    >img {
+    >i {
       height: 60%;
       margin: 20px auto;
     }
