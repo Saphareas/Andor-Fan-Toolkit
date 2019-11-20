@@ -5,8 +5,6 @@
  */
 
 const fs = require("fs");
-const puppeteer = require("puppeteer");
-const mergePDFs = require("./lib/mergepdfs.js");
 
 /**
  * Main function
@@ -72,22 +70,14 @@ function parseArguments(args) {
   }
 
   let outDir = args.find((el) => {return el.includes("--out-dir=")});
-  if (outDir != undefined)
-    outDir = outDir.split('=')[1];
-  else
-    outDir = "./out";
+  outDir = outDir ? outDir.split('=')[1] : "./out";
 
   let storyArg = args.find((el) => {return el.includes("--story=")});
-  if (storyArg != undefined)
-    storyArg = storyArg.split('=')[1];
-
+  storyArg = storyArg ? storyArg.split('=')[1] : false;
   let fogArg = args.find((el) => {return el.includes("--fog=")});
-  if (fogArg != undefined)
-    fogArg = fogArg.split('=')[1];
-
+  fogArg = fogArg ? fogArg.split('=')[1] : false;
   let eventsArg = args.find((el) => {return el.includes("--events=")});
-  if (eventsArg != undefined)
-    eventsArg = eventsArg.split('=')[1];
+  eventsArg = eventsArg ? eventsArg.split('=')[1] : false;
 
   return {
     outDir: outDir,
@@ -222,28 +212,10 @@ async function buildEventCards(jsonObj, outDir) {
   mergePDFs.merge(outDir, "events.part", "events-merged.pdf", true);
 }
 
-/**
- * Logs a help string to the console
- */
-function echoHelp() {
-  let helpString = `
-${require("./package.json").name} ${require("./package.json").version}
-${require("./package.json").description}
--h/--help                               Get this help text
---out-dir=</some/folder>                Set the output directory
---story=</path/to/your-story.json>      Set the path for your story.json file
---fog=</path/to/your-fog.json>          Set the path for your story.json file
---events=</path/to/your-events.json>    Set the path for your story.json file
-`;
-  console.log(helpString);
-}
-
-if (require.main === module) {
-  // Entry point
-  main();
-} else {
-  // npm exports
-  exports.buildStoryCards = buildStoryCards;
-  exports.buildFogTiles = buildFogTiles;
-  exports.buildEventCards = buildEventCards;
+export default {
+  methods: {
+    buildStoryCards: buildStoryCards,
+    buildFogTiles: buildFogTiles,
+    buildEventCards: buildEventCards
+  }
 }
