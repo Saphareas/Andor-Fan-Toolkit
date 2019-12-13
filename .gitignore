@@ -1,4 +1,5 @@
 .DS_Store
+*.pdf
 node_modules
 /dist
 
@@ -13,6 +14,8 @@ yarn-error.log*
 
 # Editor directories and files
 .idea
+out
+/*.png
 .vscode
 *.suo
 *.ntvs*
@@ -22,3 +25,5 @@ yarn-error.log*
 
 #Electron-builder output
 /dist_electron
+.directory
+.parts

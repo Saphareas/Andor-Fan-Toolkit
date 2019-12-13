@@ -1,7 +1,9 @@
 {
   "name": "andor-fan-toolkit-gui",
   "version": "0.1.0",
-  "private": true,
+  "private": true, 
+  "description": "",
+  "author": "Fabian Große <saphareas@t-online.de>",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -13,6 +15,11 @@
     "postuninstall": "electron-builder install-app-deps"
   },
   "main": "background.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Saphareas/Andor-Custom-Cards-Builder.git"
+  },
+  "license": "GPL-3.0-or-later",
   "dependencies": {
     "core-js": "^2.6.5",
     "marked": "^0.7.0",
