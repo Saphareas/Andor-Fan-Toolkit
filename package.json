@@ -1,0 +1,68 @@
+{
+  "name": "andor-fan-toolkit-gui",
+  "version": "0.1.0",
+  "private": true, 
+  "description": "",
+  "author": "Fabian Große <saphareas@t-online.de>",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "electron:build": "vue-cli-service electron:build",
+    "electron:generate-icons": "electron-icon-builder --input=./public/icon.png --output=build --flatten",
+    "electron:serve": "vue-cli-service electron:serve",
+    "postinstall": "electron-builder install-app-deps",
+    "postuninstall": "electron-builder install-app-deps"
+  },
+  "main": "background.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Saphareas/Andor-Custom-Cards-Builder.git"
+  },
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "core-js": "^2.6.5",
+    "marked": "^0.7.0",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.3",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.11.2",
+    "@vue/cli-plugin-babel": "^3.8.0",
+    "@vue/cli-plugin-eslint": "^3.8.0",
+    "@vue/cli-service": "^3.8.4",
+    "babel-eslint": "^10.0.1",
+    "electron": "^5.0.0",
+    "electron-icon-builder": "^1.0.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.1.0",
+    "vue-cli-plugin-electron-builder": "^1.3.5",
+    "vue-template-compiler": "^2.5.21"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}
