@@ -1,29 +1,5 @@
-# andor-fan-toolkit-gui
+# DEPRECIATED
 
-## Project setup
-```
-npm install
-```
+because the code got too messy. I'm still new to this :(
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## New Repo at [Andorify](https://github.com/Saphareas/Andorify)
